@@ -4,8 +4,11 @@
   }
 body{
   background: fixed url(../images/background.png);
-
 }
+form{
+  margin-bottom: 50px;
+}
+
 .pages-head{
   text-align: center;
   font-family: Exo2;
@@ -24,11 +27,14 @@ body{
 .content-block::before {
   content: " ";
 }
+.cat-image{
+
+}
 .content-block::after {
   content: " ";
 }
 .collective-block{
-
+content:attr("saef") ;
 }
 .item-block{
   display: inline-block;
@@ -41,7 +47,7 @@ body{
   border-radius: 10px;
 }
 .circle{
-  position: relative;
+  position: absolute;
   width:80px;
   height:80px;
   border-radius:50px;
@@ -52,12 +58,18 @@ body{
   line-height:100px;
   text-align:center;
   background:#1698d9;
-  left: 220px;
-  top: 380px;
+  left: 225px;
+  top: 385px;
   line-height:0.9;
   font-family: Trebuchet MS;
 }
+#toggle3 +.item-block{
+background:linear-gradient(135deg, transparent 32px, #b3b3b3 0);
 
+}
+#toggle3 +.item-block .circle{
+  background: #b3b3b3;
+}
 input[type=checkbox] {
     position: absolute;
     display: none;
@@ -74,12 +86,22 @@ input[type=checkbox] {
   right: 4px;
   border-radius: 6px;
 }
+
 input[type=checkbox]:checked +.item-block{
   /* background: #d51a6a; */
   background:linear-gradient(135deg, transparent 32px, #d51a6a 0);
 }
 input[type=checkbox]:checked +.item-block .circle{
   background: #d51a6a;
+}
+input[type=checkbox]:checked ~.item-description .item{
+  display: none;
+}
+input[type=checkbox]:checked ~.item-description .item2{
+  display: inherit;
+}
+.item2{
+  display: none;
 }
 .weight{
   font-size: 42px;
@@ -90,15 +112,49 @@ input[type=checkbox]:checked +.item-block .circle{
 }
 .item-description{
   color: #fff;
-  font-family: Exo2;
+  font-family: Trebuchet MS;
   font-size: 12px;
   text-align:center;
-  margin-top: 10px;
+  margin-top: 19px;
 }
 .item-description a{
   color: #1698d9;
   text-decoration: none;
   border-bottom: 1px dashed #1698d9;
+}
+.product-info{
+  position: relative;
+  color: #666666;
+  font-family: Trebuchet MS;
+  margin: 24px 0 0 49px;
+  font-size: 16px;
+line-height: 8px;
+}
+.product-name{
+  position: relative;
+  color: #000;
+  font-family: Trebuchet MS;
+  margin: 29px 0 0 47px;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 24px;
+}
+.product-info2{
+  position: relative;
+  color: #000;
+  font-family: Trebuchet MS;
+  margin: 24px 0 0 47px;
+  font-size: 24px;
+  line-height: 12px;
+  font-weight: bold;
+}
+.product-info3{
+  position: relative;
+  color: #666666;
+  font-family: Trebuchet MS;
+  margin: 25px 0 0 49px;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 @media(max-width:1024px){
